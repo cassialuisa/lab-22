@@ -1,29 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import { Container } from "../components/Container";
 import Header from "../components/Header";
-import Product, { ProductProps } from "../components/Product";
-
-const data: ProductProps = {
-  id: 1,
-  name: "Product 1",
-  picture:
-    "https://somos.lojaiplace.com.br/wp-content/uploads/2021/04/apple_iphone-12-spring21_purple_04202021.jpg",
-  price: 20.50,
-};
+import { ProductProps } from "../components/Product/Product.types";
+import { ProductsList } from "../components/Product/ProductsList";
+import apiClient from "../Services/apiClient";
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [products, setProducts] = useState<ProductProps[]>([]);
+
+  async function buscarProdutos() {
+    const response = await apiClient.get<ProductProps[]>(
+      `/products`
+    );
+    console.log(response);
+    // const formatedPrice () { response.data.map(function(product:ProductProps){
+    //   return {...product, price: formatedPrice(product.price)}}
+    // })
+    setProducts(response.data);
+  }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
   return (
     <>
       <Header setIsOpen={setIsOpen} />
       <Container>
-        <Product {...data} />
+        <ProductsList
+          products={products}
+        />
         <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
       </Container>
     </>
   );
 };
-
 export default Home;
