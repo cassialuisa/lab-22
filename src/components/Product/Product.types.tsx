@@ -3,5 +3,6 @@ export type ProductProps = {
     name: string;
     price: number;
     picture: string;
+    quantity:number
   };
   

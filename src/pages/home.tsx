@@ -10,6 +10,7 @@ const Home = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState<ProductProps[]>([]);
+  //const [addProducts, cart] = useCart();
 
   async function buscarProdutos() {
     const response = await apiClient.get<ProductProps[]>(
@@ -21,10 +22,11 @@ const Home = () => {
     // })
     setProducts(response.data);
   }
-
+  
   useEffect(() => {
     buscarProdutos();
   }, []);
+
   return (
     <>
       <Header setIsOpen={setIsOpen} />

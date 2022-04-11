@@ -1,5 +1,6 @@
 import apiClient from "../../Services/apiClient";
 import Incrementor from "../Incrementor";
+import { Quantity } from "../Incrementor/styles";
 import { ProductProps } from "./Product.types";
 import { Wrapper, Info, Column, Text, WrapperIncrementor } from "./styles";
 
@@ -7,7 +8,8 @@ export const Products: React.FC<ProductProps> = ({
   id,
   picture,
   name,
-  price
+  price,
+  quantity
 }) => {
 
   return (
@@ -21,7 +23,7 @@ export const Products: React.FC<ProductProps> = ({
         </Column>
 
         <WrapperIncrementor>
-          <Incrementor id={id} quantity={1} />
+          <Incrementor id={id} quantity={quantity} />
         </WrapperIncrementor>
       </Info>
     </Wrapper>
