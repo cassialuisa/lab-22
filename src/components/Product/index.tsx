@@ -1,28 +1,29 @@
+import apiClient from "../../Services/apiClient";
 import Incrementor from "../Incrementor";
+import { ProductProps } from "./Product.types";
 import { Wrapper, Info, Column, Text, WrapperIncrementor } from "./styles";
 
-export type ProductProps = {
-  id: number;
-  name: string;
-  price: number;
-  picture: string;
-};
+export const Products: React.FC<ProductProps> = ({
+  id,
+  picture,
+  name,
+  price
+}) => {
 
-const Product = ({ id, name, price, picture }: ProductProps) => (
-  <Wrapper>
-    <img src={picture} alt={`Imagem de referência ${name}`} />
+  return (
+    <Wrapper>
+      <img src={picture} alt={`Imagem de referência ${name}`} />
 
-    <Info>
-      <Column>
-        <Text>{name}</Text>
-        <Text>{price}</Text>
-      </Column>
+      <Info>
+        <Column>
+          <Text>{name}</Text>
+          <Text>{price}</Text>
+        </Column>
 
-      <WrapperIncrementor>
-        <Incrementor id={id} quantity={1} />
-      </WrapperIncrementor>
-    </Info>
-  </Wrapper>
-);
-
-export default Product;
+        <WrapperIncrementor>
+          <Incrementor id={id} quantity={1} />
+        </WrapperIncrementor>
+      </Info>
+    </Wrapper>
+  )
+}
