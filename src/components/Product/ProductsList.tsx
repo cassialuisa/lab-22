@@ -1,7 +1,6 @@
 import { Products } from ".";
 import { ProductProps } from "./Product.types";
 
-
 export type ProductListProps = {
     products: ProductProps[];
 }

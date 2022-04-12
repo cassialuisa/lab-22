@@ -6,15 +6,20 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 3.2rem;
+  
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.lightPink};
     border-radius: ${theme.border.radius.other};
 
     img {
+      align-items:center;
       width: 12.5rem;
       height: 12.5rem;
       border-radius: ${theme.border.radius.other};
+      margin-right:40px;
+  
+      
     }
   `}
 `;
@@ -35,12 +40,14 @@ export const Info = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-right:400px;
+  
   ${media.lessThan("medium")`
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     margin-bottom: 0.8rem;
+    
   `}
 `;
 
@@ -65,6 +72,7 @@ export const Text = styled.p`
     width: 1.6rem;
     height: 1.6rem;
     margin-right: 0.4rem;
+    
     ${({ theme }) => css`
       color: ${theme.colors.primary};
     `}

@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: -100px;
   ${({ theme }) => css`
     border: 1px solid ${theme.colors.secondary};
     border-radius: ${theme.border.radius.default};

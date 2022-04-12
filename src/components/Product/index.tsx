@@ -1,6 +1,4 @@
-import apiClient from "../../Services/apiClient";
 import { Incrementor } from "../Incrementor";
-import { Quantity } from "../Incrementor/styles";
 import { ProductProps } from "./Product.types";
 import { Wrapper, Info, Column, Text, WrapperIncrementor } from "./styles";
 
@@ -11,16 +9,15 @@ export const Products = (product: ProductProps) => {
   return (
     <Wrapper>
       <img src={product.picture} alt={`Imagem de referência ${product.name}`} />
-
       <Info>
-        <Column>
-          <Text>{product.name}</Text>
-          <Text>{product.price}</Text>
-        </Column>
+      <Column>
+        <Text>{product.name}</Text>
+        <Text>{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
+      </Column>
 
-        <WrapperIncrementor>
-          <Incrementor product={product}  />
-        </WrapperIncrementor>
+      <WrapperIncrementor>
+        <Incrementor product={product} />
+      </WrapperIncrementor>
       </Info>
     </Wrapper>
   )
