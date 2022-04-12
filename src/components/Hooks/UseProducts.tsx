@@ -7,7 +7,7 @@ type useProductsType = {
     setProducts: () => void;
 }
 
-const useProducts = create<useProductsType>(set => ({
+export const useProducts = create<useProductsType>(set => ({
     products: [],
     setProducts: async function buscarProdutos() {
         const response = await apiClient.get<ProductProps[]>(
@@ -17,3 +17,4 @@ const useProducts = create<useProductsType>(set => ({
     },
 
 }));
+

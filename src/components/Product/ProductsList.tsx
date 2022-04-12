@@ -1,6 +1,7 @@
 import { Products } from ".";
 import { ProductProps } from "./Product.types";
 
+
 export type ProductListProps = {
     products: ProductProps[];
 }
@@ -13,7 +14,7 @@ export const ProductsList: React.FC<ProductListProps> = (
           {
             products.map(product => (
               <Products
-                key={ product.name }
+                key={ product.id }
                 {...product}
               />
             ))

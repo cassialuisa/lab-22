@@ -10,13 +10,13 @@ const Home = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState<ProductProps[]>([]);
+  
   //const [addProducts, cart] = useCart();
 
   async function buscarProdutos() {
     const response = await apiClient.get<ProductProps[]>(
       `/products`
     );
-    console.log(response);
     // const formatedPrice () { response.data.map(function(product:ProductProps){
     //   return {...product, price: formatedPrice(product.price)}}
     // })

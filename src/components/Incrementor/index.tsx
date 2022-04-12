@@ -1,25 +1,35 @@
 import { Plus as PlusIcon } from "@styled-icons/boxicons-regular/Plus";
 import { Subtract as SubtractIcon } from "@styled-icons/remix-fill/Subtract";
-
+import useCart from "../Hooks/useCart";
+import { ProductProps } from "../Product/Product.types";
 import { Wrapper, IconWrapper, Quantity } from "./styles";
 
 type IncrementorProps = {
-  id: number;
-  quantity: number;
+  product: ProductProps;
 };
 
-const Incrementor = ({ id, quantity }: IncrementorProps) => (
-  <Wrapper>
-    <IconWrapper>
-      <SubtractIcon aria-label="Subtract item" />
-    </IconWrapper>
+export const Incrementor = ({ product }: IncrementorProps) => {
+  const addItemToCart = useCart((state) => state.addItem);
+  const removeItemFromCart = useCart((state) => state.removeItem);
+  const ProductsOnCart = useCart((state) => state.cart);
 
-    <Quantity>{quantity}</Quantity>
+  return (
+    
+    <Wrapper>
+      <IconWrapper onClick = { () => removeItemFromCart(product) }>
+        <SubtractIcon aria-label="Subtract item" />
+      </IconWrapper>
 
-    <IconWrapper>
-      <PlusIcon aria-label="Add item" />
-    </IconWrapper>
-  </Wrapper>
-);
+      <Quantity>
+        {
+          ProductsOnCart.find((element: { product: { id: number; }; }) => element.product.id === product.id)?.quantity ?? 0
+        }
+      </Quantity>
 
-export default Incrementor;
+      <IconWrapper onClick={ () => addItemToCart(product) }>
+        <PlusIcon aria-label="Add item" />
+      </IconWrapper>
+    </Wrapper>
+  );
+}
+
