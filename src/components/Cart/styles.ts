@@ -44,3 +44,19 @@ export const Header = styled.div`
     width: 3rem;
   }
 `;
+
+export const Footer = styled.div`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+  padding: 16px
+`;
+
+export const WrapperCart = styled.div`
+  overflow: auto;
+  height: 440px;
+`;
