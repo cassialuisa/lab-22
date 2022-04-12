@@ -5,6 +5,7 @@ import Typography from "../Typography";
 import { Wrapper, Subtotal, Header, WrapperCart, Footer,  } from "./styles";
 import useCart from "../Hooks/useCart";
 import CartItems from "../CartItems";
+import { Info } from "../Product/styles";
 
 export type MenuPaymentProps = {
   isOpen: boolean;
@@ -21,6 +22,7 @@ const MenuPayment = ({ isOpen, setIsOpen }: MenuPaymentProps) => {
         <CloseOutline onClick={() => setIsOpen(false)} />
       </Header>
       <Typography level={5} size="large" fontWeight={600}>
+        
           <WrapperCart>
             {ProductsOnCart.map((item, i) => (
                 <CartItems 

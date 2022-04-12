@@ -2,26 +2,26 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "picture": "https://somos.lojaiplace.com.br/wp-content/uploads/2021/04/apple_iphone-12-spring21_purple_04202021.jpg",
+      "name": "iPhone 13 Pro de 256 GB – Azul-Sierra",
+      "picture": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-blue-select?wid=470&hei=556&fmt=png-alpha&.v=1645552346275",
       "quantity": 3,
-      "price": 100
+      "price": 10142.00
     },
 
     {
       "id": 2,
-      "name": "Product 2",
-      "picture": "https://somos.lojaiplace.com.br/wp-content/uploads/2021/04/apple_iphone-12-spring21_purple_04202021.jpg",
+      "name": "Apple - AirPods (3ª geração)",
+      "picture": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1632861342000",
       "quantity": 2,
-      "price": 250
+      "price": 2296.00
     },
 
     {
       "id": 3,
-      "name": "Product 3",
-      "picture": "https://somos.lojaiplace.com.br/wp-content/uploads/2021/04/apple_iphone-12-spring21_purple_04202021.jpg",
+      "name": "Apple Watch Series 7 - Caixa meia-noite alumínio",
+      "picture": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MKUQ3_VW_34FR+watch-45-alum-midnight-nc-7s_VW_34FR_WF_CO?wid=375&hei=356&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1632171067000%2C1631661671000",
       "quantity": 10,
-      "price": 299.50
+      "price": 5099.00
     }
   ]
 }
